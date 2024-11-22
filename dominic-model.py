@@ -45,6 +45,8 @@ labels_dir = "Penn_Action/Penn_Action/labels"
 
 # For each video directory in our dataset, extract said directory and corresponding matlab file
 for video_folder in sorted(os.listdir(videos_dir)):
+    if video_folder == ".DS_Store":
+        continue
     video_frames_path = os.path.join(videos_dir, video_folder)
     matlab_file_path = os.path.join(labels_dir, f"{video_folder}.mat")
 
